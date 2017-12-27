@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no,
+		shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+	<meta name="format-detection" content="telephone=no">
+
+	<title>Device Wifi Setup</title>
+
+	<style>
+		@import 'ui/css/evothings-app.css';
+		@import 'app.css';
+	</style>
+
+	<script>
+	// Redirect console.log to Evothings Workbench.
+	if (window.hyper && window.hyper.log) { console.log = hyper.log }
+	</script>
+
+	<script src="cordova.js"></script>
+	<script src="libs/evothings/evothings.js"></script>
+	<script src="libs/evothings/ui/ui.js"></script>
+	<script src="libs/evothings/easyble/easyble.js"></script>
+	<script src="libs/jquery/jquery.js"></script>
+	<script src="app.js"></script>
+
+</head>
+
+<body ontouchstart="">
+
+	<header>
+
+        <h1>WiFi Setup</h1>
+
+	</header>
+
+
+	<div id="startView">
+		<!-- img class="center" src="img/rpi3.jpg" -->
+        <p>Click Scan and select your device:</p>
+		<button class="red wide" onclick="app.startScan()">Scan</button>
+	</div>
+
+	<div id="scanResultView" style="display:none"></div>
+
+	<div id="loadingView" style="display:none">
+		<div id="loadingIndicator">
+			<img src="img/loader.gif" />
+			<p id="loadingStatus"></p>
+		</div>
+	</div>
+
+	<div id="systemInformationView" style="display:none">
+		<div id="wifiList"></div>
+
+		<button id="refreshButton" class="red wide" onclick="app.refreshWifi()">Refresh</button>
+	</div>
+
+	<div id="ssidView" style="display:none">
+        <p>Connect to network:</p>
+		
+        <div><input type="text" placeholder="Network" class="ssid" value="" /></div>
+        <div><input type="text" placeholder="Password" class="pass" value="" /></div>
+
+		<button id="connectButton" class="red wide" onclick="app.sendConnectCmd()">Connect</button>
+		<button id="cancelButton" class="gray wide" onclick="app.refreshWifi()">Cancel</button>
+	</div>
+
+</body>
+
+</html>

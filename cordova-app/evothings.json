@@ -1,0 +1,39 @@
+{
+  "name": "Wifi Setup",
+  "version": "1.0.0",
+  "title": "WiFi Setup",
+  "description": "Headless WiFi setup through Bluetooth",
+  "tags": [
+    {
+      "label": "nodejs",
+      "type": "platform"
+    },
+    {
+      "label": "raspberrypi",
+      "type": "vendor"
+    },
+    {
+      "label": "ble",
+      "type": "comm"
+    }
+  ],
+  "libraries": [
+    {
+      "name": "jquery",
+      "version": "2.1.1"
+    }
+  ],
+  "plugins": [
+    {
+      "name": "cordova-plugin-ble",
+      "version": "2.0.0"
+    }
+  ],
+  "index-file": "index.html",
+  "app-dir": "www",
+  "uuid": "ac2d94e9-91b1-4974-9169-1a762fef3869",
+  "icon": "app-icon.png",
+  "doc-url": "http://evothings.com/2.2/doc/examples/rpi3-system-information.html",
+  "long-description": "Headless WiFi setup through Bluetooth.",
+  "cordova-id": "com.device.blewifisetup"
+}
