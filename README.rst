@@ -1,5 +1,6 @@
-BLE WiFi Setup
------------------
+Headless WiFi Setup Through Mobile and Bluetooth
+-------------------------------------------------
+
 This project is to enable completely and truly headless WiFi setup through using mobile phone app for devices such as Raspberry Pi, equipped with both bluetooth and wifi.
 
 Once the device-app is installed and running on the device, the provided cordova mobile app (or Evothings app) connects using bluetooth and allows user to select an available WiFi network. The WiFi setting will be remember even if the device is restarted.
