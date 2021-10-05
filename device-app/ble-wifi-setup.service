@@ -1,0 +1,12 @@
+[Unit]
+Description=Configure WiFi via BLE: https://github.com/chrisvip/ble-wifi-setup
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/ble-wifi-setup/device-app
+ExecStart=/usr/bin/node index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
