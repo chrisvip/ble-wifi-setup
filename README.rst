@@ -44,11 +44,17 @@ These instructions have been tested on Raspberry Pi Zero W w/ Raspberrian OS.
 
 - If all works, set it up to run on system boot::
 
-     sudo vi /etc/rc.local
+     sudo cp ble-wifi-setup.service /lib/systemd/system/ble-wifi-setup.service
+     sudo systemctl daemon-reload
+     sudo systemctl enable ble-wifi-setup.service
+     sudo systemctl start ble-wifi-setup.service
+     sudo systemctl status ble-wifi-setup.service
 
-     # add the following lines just before exit 0 (the last line)
-     hciconfig hci0 up
-     nohup node /home/pi/pi-bluetooth-setup/pi-application/index.js &
+     # You should see the following lines:
+     # ble-wifi-setup.service - Configure WiFi via BLE https://github.com/chrisvip/ble-wifi-setup
+     # {...}
+     #  Active: active (running) since Tue 2021-10-05 11:53:46 MDT; 5s ago
+     # {...}
 
 The Mobile App
 -------------------
