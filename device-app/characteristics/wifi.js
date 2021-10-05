@@ -106,14 +106,17 @@ WifiCharacteristic.prototype.onWriteRequest = function(data, offset, withoutResp
             }
 
             console.log("The file was saved!");
-            
-            var refreshCmd = 'killall -HUP wpa_supplicant';
+
+            var refreshCmd = 'sudo wpa_cli -i wlan0 reconfigure';
             exec(refreshCmd, function(error, stdout, stderr) {
                 console.log("wpa refresh: " + stdout);
             });
             
             callback(this.RESULT_SUCCESS, new Buffer(JSON.stringify({})));
         }); 
+            setTimeout(function(){ process.exit();}, 1000); // Systemd will restart the daemon
+
+        });
     });
 }
     
